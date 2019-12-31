@@ -1,3 +1,24 @@
+<div class="row" *ngIf="loading && !error">
+  <div class="col">
+    <div class="alert alert-info text-center" role="alert">
+      <strong><i class="fa fa-sync fa-spin"></i> cargando...</strong>
+    </div>
+  </div>
+</div>
+
+<div class="row" *ngIf="error && !loading">
+  <div class="col">
+    <div class="alert alert-danger text-center" role="alert">
+      <strong>{{ error.status }}</strong>
+      <p>
+        {{ error.message }}
+        <br />
+        {{ error.url }}
+      </p>
+    </div>
+  </div>
+</div>
+
 <div class="card-columns">
   <div class="card" *ngFor="let usuario of usuarios">
     <img
